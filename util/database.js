@@ -5,18 +5,19 @@ let _db;
 
 const mongoConnect = callback => {
   MongoClient.connect(
-    //'mongodb+srv://divyanshudeo1301:Divyanshu97@ecartwebsite.t1egsr1.mongodb.net/shop?retryWrites=true&w=majority'
-    "mongodb+srv://divyanshudeo1301:Divyanshu97@ecartwebsite.t1egsr1.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://divyanshudeo:Divyanshu97@cluster0.47pbebr.mongodb.net/shop?retryWrites=true&w=majority"
   )
     .then(client => {
-      console.log('Connected!');
+      console.log("connected");
       _db = client.db();
       callback();
+      
     })
     .catch(err => {
       console.log("error in mongodb connection");
       console.log(err);
       throw err;
+      
     });
 };
 
